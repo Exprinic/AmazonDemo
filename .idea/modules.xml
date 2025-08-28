@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AmazonDemo.iml" filepath="$PROJECT_DIR$/AmazonDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mock-amazon-frontend.iml" filepath="$PROJECT_DIR$/mock-amazon-frontend.iml" />
+    </modules>
+  </component>
+</project>

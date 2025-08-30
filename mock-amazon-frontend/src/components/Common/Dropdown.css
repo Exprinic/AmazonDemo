@@ -1,0 +1,90 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+    padding: 0;
+    margin-top: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    min-width: 128px;
+}
+
+.dropdown-menu-left {
+    left: 0;
+}
+
+.dropdown-menu-right {
+    right: 0;
+    border-radius: 0 0 4px 4px;
+}
+
+.dropdown-menu-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    clear: both;
+    font-weight: 400;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 13px;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f2f2;
+    color: #000;
+}
+
+.dropdown-divider {
+    height: 1px;
+    margin: 5px 0;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+/* 账号下拉框特定样式 */
+.account-dropdown .dropdown-menu {
+    background-color: #232f3e;
+    border: 1px solid #131a22;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.account-dropdown .dropdown-item {
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.account-dropdown .dropdown-item:hover {
+    background-color: #37475a;
+    color: #fff;
+}
+
+.account-dropdown .dropdown-divider {
+    background-color: #3a4553;
+    margin: 4px 0;
+}

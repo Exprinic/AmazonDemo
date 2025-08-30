@@ -1,35 +1,89 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { AuthProvider, useAuth } from './context/AuthContext'
+import { CartProvider, useCart } from './context/CartContext'
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+import Cart from './components/cart/Cart'
+import Home from './components/Home'
+import Navbar from './components/common/Navbar'
+import CategoryNavbar from './components/layout/CategoryNavbar'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// 主应用内容组件
+function AppContent() {
+    const [authModal, setAuthModal] = useState(null) // 'login' or 'register'
+    const [showCart, setShowCart] = useState(false)
+    const { currentUser, logout } = useAuth()
+    const { cart } = useCart()
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const handleAuthModalClose = () => {
+        setAuthModal(null)
+    }
+
+    const handleSwitchToRegister = () => {
+        setAuthModal('register')
+    }
+
+    const handleSwitchToLogin = () => {
+        setAuthModal('login')
+    }
+
+    const handleCartToggle = () => {
+        if (!currentUser) {
+            setAuthModal('login')
+        } else {
+            setShowCart(!showCart)
+        }
+    }
+
+    return (
+        <div className="App">
+            <Navbar
+                onAuthClick={() => setAuthModal('login')}
+                onCartClick={handleCartToggle}
+                cartItemCount={cart?.totalItems || 0}
+                currentUser={currentUser}
+                onLogout={logout}
+            />
+
+            <CategoryNavbar />
+
+            <main className="main-content">
+                <Home />
+            </main>
+
+            {/* 认证模态窗口 */}
+            {authModal === 'login' && (
+                <Login
+                    onClose={handleAuthModalClose}
+                    switchToRegister={handleSwitchToRegister}
+                />
+            )}
+
+            {authModal === 'register' && (
+                <Register
+                    onClose={handleAuthModalClose}
+                    switchToLogin={handleSwitchToLogin}
+                />
+            )}
+
+            {/* 购物车模态窗口 */}
+            {showCart && (
+                <Cart onClose={() => setShowCart(false)} />
+            )}
+        </div>
+    )
+}
+
+// 包装主应用内容
+function App() {
+    return (
+        <AuthProvider>
+            <CartProvider>
+                <AppContent />
+            </CartProvider>
+        </AuthProvider>
+    )
 }
 
 export default App

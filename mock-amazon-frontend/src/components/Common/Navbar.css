@@ -1,0 +1,313 @@
+/* 导航栏样式 */
+.navbar {
+    background-color: #131921;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* 顶部导航栏 */
+.navbar-top {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    font-size: 12px;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-logo:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.navbar-deliver {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.navbar-deliver:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.navbar-deliver-location {
+    margin-left: 5px;
+}
+
+.navbar-search {
+    display: flex;
+    flex-grow: 1;
+    /*max-width: 800px;*/
+    margin: 0 20px;
+}
+
+.navbar-search select {
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    padding: 0 10px;
+    font-size: 12px;
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.navbar-search input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 15px;
+}
+
+.navbar-search button {
+    padding: 10px 15px;
+    background: #febd69;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.navbar-search button:hover {
+    background: #f3a847;
+}
+
+.navbar-lang {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.navbar-lang:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.navbar-account {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.navbar-account:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.navbar-orders {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.navbar-orders:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.navbar-cart {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.navbar-cart:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f08804;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* 底部导航栏 */
+.navbar-bottom {
+    display: flex;
+    align-items: center;
+    background-color: #232f3e;
+    padding: 0 15px;
+    height: 40px;
+}
+
+.navbar-all {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.navbar-all:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.navbar-link:hover {
+    border-color: white;
+    border-radius: 4px;
+}
+
+.navbar-link-small {
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.navbar-link-large {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* 下拉菜单样式 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 128px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    padding: 10px;
+    top: 100%;
+    right: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #0F1111;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.dropdown-item:hover {
+    background-color: #EAEDED;
+    color: #111;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 5px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar-search {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .navbar-links {
+        width: 100%;
+        justify-content: space-around;
+        gap: 5px;
+    }
+
+    .navbar-link, .navbar-cart {
+        padding: 3px 5px;
+    }
+
+    .navbar-link-small {
+        font-size: 10px;
+    }
+
+    .navbar-link-large {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-deliver-text {
+        display: none;
+    }
+
+    .navbar-lang-text {
+        display: none;
+    }
+
+    .navbar-account-text {
+        display: none;
+    }
+
+    .navbar-orders-text {
+        display: none;
+    }
+}
+

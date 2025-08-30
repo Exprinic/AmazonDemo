@@ -1,0 +1,80 @@
+.category-navbar {
+    background-color: #232f3e;
+    color: white;
+    padding: 0;
+    border-bottom: 1px solid #3a4553;
+}
+
+.category-navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.category-navbar-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-navbar-item {
+    flex-shrink: 0;
+}
+
+.category-navbar-link {
+    display: block;
+    padding: 10px 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.category-navbar-link:hover {
+    background-color: #37475a;
+    border-color: white;
+}
+
+.category-navbar-loading {
+    padding: 10px 15px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .category-navbar-container {
+        padding: 0 10px;
+    }
+
+    .category-navbar-link {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-navbar-list {
+        padding-bottom: 5px;
+    }
+
+    .category-navbar-link {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}
+
+.category-navbar-error {
+    padding: 10px 15px;
+    color: #ff6b6b;
+    font-size: 14px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 3px;
+}
